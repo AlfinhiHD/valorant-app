@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelText: "Password",
                         border: const OutlineInputBorder(),
                         prefixIcon: const Icon(Icons.lock),
-                        filled: true, // Set filled to true
+                        filled: true,
                         fillColor: Colors.grey[800],
                         labelStyle: TextStyle(color: Colors.white),
                         focusedBorder: OutlineInputBorder(
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red),
-                        ), // Specify the background color
+                        ),
                         suffixIcon: InkWell(
                           onTap: () {
                             setState(() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectakhir_praktpm/login_screen.dart';
+import 'package:projectakhir_praktpm/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Valorant App',
-      home: LoginScreen(),
+      home: DashboardPage(),
     );
   }
 }
