@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectakhir_praktpm/dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -141,10 +142,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           userController.clear();
                           passController.clear();
 
-                          // Route route = MaterialPageRoute(
-                          // builder: (context) =>
-                          // const Navbar());
-                          // Navigator.push(context, route);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DashboardPage(),
+                            ),
+                          );
                         }
                       },
                       style: ButtonStyle(

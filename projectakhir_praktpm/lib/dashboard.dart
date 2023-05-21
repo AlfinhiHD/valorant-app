@@ -1,8 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:projectakhir_praktpm/datadiri.dart';
 import 'package:projectakhir_praktpm/detail.dart';
 import 'package:projectakhir_praktpm/favorite.dart';
+import 'package:projectakhir_praktpm/login_screen.dart';
+import 'package:projectakhir_praktpm/moneyconverter.dart';
+import 'package:projectakhir_praktpm/sarankesan.dart';
+import 'package:projectakhir_praktpm/timeconverter.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -35,14 +40,6 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
     );
   }
-  void navigateToFavoriteAgentsPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => FavoriteAgentsPage(),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +47,6 @@ class _DashboardPageState extends State<DashboardPage> {
       appBar: AppBar(
         title: Text('Dashboard'),
         backgroundColor: Color(0xFF000000),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.favorite),
-            onPressed: navigateToFavoriteAgentsPage,
-          ),
-        ],
       ),
       body: agents.isEmpty
           ? Center(
@@ -129,6 +120,92 @@ class _DashboardPageState extends State<DashboardPage> {
             },
           ),
         ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0xFF000000),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              icon: Icon(Icons.favorite, color: Colors.white),
+              onPressed: navigateToFavoriteAgentsPage,
+            ),
+            IconButton(
+              icon: Icon(Icons.monetization_on, color: Colors.white),
+              onPressed: navigateToCurrencyConverterPage,
+            ),
+            IconButton(
+              icon: Icon(Icons.access_time_filled, color: Colors.white),
+              onPressed: navigateToTimeConverterPage,
+            ),
+            IconButton(
+              icon: Icon(Icons.person, color: Colors.white),
+              onPressed: navigateToProfilePage,
+            ),
+            IconButton(
+              icon: Icon(Icons.feedback, color: Colors.white),
+              onPressed: navigateToFeedbackPage,
+            ),
+            IconButton(
+              icon: Icon(Icons.logout, color: Colors.white),
+              onPressed: navigateToLogout,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void navigateToFavoriteAgentsPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FavoriteAgentsPage(),
+      ),
+    );
+  }
+
+  void navigateToCurrencyConverterPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CurrencyConverterPage(),
+      ),
+    );
+  }
+
+  void navigateToTimeConverterPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => TimeConverterPage(),
+      ),
+    );
+  }
+
+  void navigateToProfilePage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProfilePage(),
+      ),
+    );
+  }
+
+  void navigateToFeedbackPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FeedbackPage(),
+      ),
+    );
+  }
+
+  void navigateToLogout() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => LoginScreen(),
       ),
     );
   }
