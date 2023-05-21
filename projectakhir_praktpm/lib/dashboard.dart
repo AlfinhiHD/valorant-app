@@ -19,7 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Future<void> fetchAgents() async {
-    final response = await http.get(Uri.parse('https://valorant-api.com/v1/agents'));
+    final response = await http.get(Uri.parse('https://valorant-api.com/v1/agents?isPlayableCharacter=true'));
     if (response.statusCode == 200) {
       setState(() {
         agents = json.decode(response.body)['data'];
@@ -112,7 +112,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               ),
                               SizedBox(height: 8),
                               Text(
-                                agent['role'] != null ? agent['role']['displayName'] : 'Initiator',
+                                agent['role']['displayName'],
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.white,
