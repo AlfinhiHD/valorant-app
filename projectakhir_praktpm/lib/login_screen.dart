@@ -60,10 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormField(
                       keyboardType: TextInputType.name,
                       controller: userController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         labelText: "Username",
                         border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.person),
+                        prefixIcon: Icon(Icons.person, color: Colors.white),
                         filled: true,
                         fillColor: Colors.grey[800],
                         labelStyle: TextStyle(color: Colors.white),
@@ -78,6 +79,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red),
+                        ),
+                        errorStyle: TextStyle(
+                          color: Colors.white,
                         ),
                       ),
                       validator: (value) {
@@ -95,10 +99,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.visiblePassword,
                       controller: passController,
                       obscureText: passToggle,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         labelText: "Password",
                         border: const OutlineInputBorder(),
-                        prefixIcon: const Icon(Icons.lock),
+                        prefixIcon: const Icon(Icons.lock, color: Colors.white),
                         filled: true,
                         fillColor: Colors.grey[800],
                         labelStyle: TextStyle(color: Colors.white),
@@ -122,7 +127,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           child: Icon(passToggle
                               ? Icons.visibility
-                              : Icons.visibility_off),
+                              : Icons.visibility_off, color: Colors.white),
+                        ),
+                        errorStyle: TextStyle(
+                          color: Colors.white,
                         ),
                       ),
                       validator: (value) {
