@@ -1,2 +1,2 @@
 # valorant-app
-Merupakan repository project akhir Praktikum Pemprograman Mobile 
+Merupakan repository project akhir Pemprograman Mobile 
